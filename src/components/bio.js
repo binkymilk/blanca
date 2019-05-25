@@ -38,8 +38,8 @@ function Bio() {
               }}
             />
             <p>
-              A personal blog by <strong>{author}</strong>.<br />
-              I like building stuff and dumping them in the world wide web.
+              A personal blog by <strong>{author}</strong>. I like building
+              stuff and dumping them in the world wide web.
             </p>
           </div>
         )

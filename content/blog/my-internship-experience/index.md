@@ -1,6 +1,7 @@
 ---
 title: "From Clueless to True Love: My Internship Experience"
 date: "2018-12-26"
+featuredImage: "./bangtantv-header.png"
 ---
 
 It's already the end of 2018 and most of you would be finding internship programs fit for your interests and needs. Well here's a post for you: for you who is confused on what career path to take, for you who has heard of Data Science and ML, for you who is very interested in data analysis.

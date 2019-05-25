@@ -2,6 +2,7 @@
 title: "An Analysis on BANGTANTV"
 date: 2018-08-04
 description: I tried scraping BTS' videos from BANGTANTV and here's what I found out.
+featuredImage: "./bangtantv-header.png"
 ---
 
 
