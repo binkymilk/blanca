@@ -22,7 +22,10 @@ class Layout extends React.Component {
             style={{
               boxShadow: `none`,
               textDecoration: `none`,
-              color: `inherit`,
+              background: `-webkit-linear-gradient(45deg, #ffc2b2, #f7abc8, #cac0e1, #95caed)`,
+              WebkitBackgroundClip: `text`,
+              backgroundClip: `text`,
+              color: `transparent`
             }}
             to={`/`}
           >
@@ -34,7 +37,6 @@ class Layout extends React.Component {
       header = (
         <h3
           style={{
-            fontFamily: `Montserrat, sans-serif`,
             marginTop: 0,
           }}
         >
@@ -42,7 +44,10 @@ class Layout extends React.Component {
             style={{
               boxShadow: `none`,
               textDecoration: `none`,
-              color: `inherit`,
+              background: `-webkit-linear-gradient(45deg, #ffc2b2, #f7abc8, #cac0e1, #95caed)`,
+              WebkitBackgroundClip: `text`,
+              backgroundClip: `text`,
+              color: `transparent`
             }}
             to={`/`}
           >
