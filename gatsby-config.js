@@ -3,11 +3,12 @@ module.exports = {
     title: `BLANCA`,
     author: `Bianca Silmaro`,
     description: `I like building stuff and dumping them in the world wide web.`,
-    siteUrl: `https://blanca.netlify.com/`,
+    siteUrl: `https://blanca.netlify.com`,
     social: {
       twitter: `binkymilk`,
       github: `binkymilk`
-    }
+    },
+    image: `favicon.png`
   },
   plugins: [
     `gatsby-transformer-sharp`,
