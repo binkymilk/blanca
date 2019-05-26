@@ -8,7 +8,7 @@ module.exports = {
       twitter: `binkymilk`,
       github: `binkymilk`
     },
-    image: `favicon.png`
+    image: `image.png`
   },
   plugins: [
     `gatsby-transformer-sharp`,
