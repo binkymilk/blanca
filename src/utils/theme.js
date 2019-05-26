@@ -14,13 +14,13 @@ const theme = {
   ],
   headerFontFamily: ['Muli', 'sans-serif'],
   bodyFontFamily: ['Muli', 'sans-serif'],
-  bodyColor: '#151923',
+  bodyColor: '#3c3b3a',
   headerWeight: 900,
   bodyWeight: 300,
   boldWeight: 700,
   overrideStyles: ({ adjustFontSizeTo, scale, rhythm }, options) => ({
     body: {
-      background: '#f5f8fd',
+      background: 'white',
     },
     // h1: {
     //   fontFamily: ['Helvetica Neue', 'Helvetica', 'sans-serif'].join(','),
@@ -73,7 +73,6 @@ const theme = {
       },
     },
     'h1,h2,h3,h4,h5,h6': {
-      color: '#5d5d7a',
       marginTop: rhythm(2),
     },
     h4: {
@@ -85,11 +84,12 @@ const theme = {
     },
     a: {
       // boxShadow: '0 1px 0 0 currentColor',
-      color: '#608db1',
+      color: '#3c3a3b',
+      borderBottom: 'solid 5px #dcf4dd',
       textDecoration: 'none'
     },
     'a:hover,a:active': {
-      color: '#527795',
+      color: 'black',
     },
     'mark,ins': {
       background: '#007acc',

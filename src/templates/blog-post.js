@@ -29,7 +29,7 @@ class BlogPostTemplate extends React.Component {
           }}
         />
         <div style={{ paddingTop: '180px' }}>
-          <h1 style={{ color: `#5d5d7a` }}>{post.frontmatter.title}</h1>
+          <h1>{post.frontmatter.title}</h1>
           <p
             style={{
               ...scale(-1 / 5),

@@ -1,53 +1,58 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import Image from "gatsby-image"
+import { graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import { rhythm, scale } from "../utils/typography"
 
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="Blog" />
-        <Bio />
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug} style={{ marginBottom: rhythm(2) }}>
-              <Image
-                sizes={node.frontmatter.featuredImage.childImageSharp.sizes}
-                style={{ height: '150px' }}
-              />
-              <h3
-                style={{
-                  marginTop: rhythm(1 / 2),
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small
-                style={{ color: `#7a7c7e` }}
-              >
-                {node.frontmatter.date}
-              </small>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </div>
-          )
-        })}
+        <SEO title="Home" />
+        <div
+          style={{
+            //background: `green`,
+            height: `calc(100vh - 210px)`,
+            display: `flex`,
+            flexDirection: `column`,
+            alignItems: `center`,
+            justifyContent: `center`
+          }}
+        >
+          <p
+            style={{
+              ...scale(2.75),
+              fontWeight: `bold`,
+              lineHeight: `1.2`
+            }}
+          >
+            ;-)
+          </p>
+          <p
+            style={{
+              ...scale(0.50),
+              fontWeight: `bold`,
+              lineHeight: `1.5`,
+              textAlign: `center`
+            }}
+          >
+            hi, my name is {` `}
+            <span
+              style={{
+                backgroundColor: `#dcf4dd`,
+                borderRadius: rhythm(1),
+                padding: `${rhythm(1 / 4)} ${rhythm(1 / 2)}`
+              }}
+            >
+              bianca
+            </span><br />
+            this is where i dump my stuff
+          </p>
+        </div>
       </Layout>
     )
   }
@@ -68,18 +73,6 @@ export const pageQuery = graphql`
           excerpt
           fields {
             slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-            featuredImage {
-              childImageSharp{
-                sizes(maxWidth: 630) {
-                    ...GatsbyImageSharpSizes
-                }
-              }
-            }
           }
         }
       }

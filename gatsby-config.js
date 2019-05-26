@@ -6,7 +6,7 @@ module.exports = {
     siteUrl: `https://blanca.netlify.com/`,
     social: {
       twitter: `binkymilk`,
-    },
+    }
   },
   plugins: [
     `gatsby-transformer-sharp`,
