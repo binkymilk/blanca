@@ -32,7 +32,13 @@ const Header = ({ title }) => (
       </Link>
     </h3>
     <div style={{ display: `flex`, marginLeft: `auto` }}>
-      <h3 style={{ margin: 0, padding: `${rhythm(1 / 3)} ${rhythm(2 / 3)}` }}>
+      <h3
+        style={{
+          fontWeight: `bold`,
+          margin: 0,
+          padding: `${rhythm(1 / 3)} ${rhythm(2 / 3)}`
+        }}
+      >
         <Link
           style={{
             boxShadow: `none`,

@@ -56,12 +56,6 @@ const theme = {
     'blockquote cite:before': {
       content: '"— "',
     },
-    // ul: {
-    //   listStyle: 'disc',
-    // },
-    // 'ul,ol': {
-    //   marginLeft: 0,
-    // },
     [MOBILE_MEDIA_QUERY]: {
       'ul,ol': {
         marginLeft: rhythm(1),
@@ -75,15 +69,7 @@ const theme = {
     'h1,h2,h3,h4,h5,h6': {
       marginTop: rhythm(2),
     },
-    h4: {
-      letterSpacing: '0.140625em',
-      textTransform: 'uppercase',
-    },
-    h6: {
-      fontStyle: 'italic',
-    },
     a: {
-      // boxShadow: '0 1px 0 0 currentColor',
       color: '#3c3a3b',
       borderBottom: 'solid 5px #dcf4dd',
       textDecoration: 'none'
