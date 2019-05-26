@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: `https://blanca.netlify.com/`,
     social: {
       twitter: `binkymilk`,
+      github: `binkymilk`
     }
   },
   plugins: [

@@ -1,5 +1,6 @@
 import React from "react"
-import Header from "../components/header"
+import Header from "./header"
+import Footer from "./footer"
 import { rhythm } from "../utils/typography"
 
 class Layout extends React.Component {
@@ -19,6 +20,7 @@ class Layout extends React.Component {
         >
           <main>{children}</main>
         </div>
+        <Footer />
       </div>
     )
   }
