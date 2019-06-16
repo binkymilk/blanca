@@ -1,6 +1,5 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Image from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -18,16 +17,7 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <Image
-          sizes={post.frontmatter.featuredImage.childImageSharp.sizes}
-          style={{
-            position: 'absolute',
-            left: 0,
-            height: '200px',
-            width: '100vw',
-          }}
-        />
-        <div style={{ paddingTop: '180px' }}>
+        <div>
           <h1>{post.frontmatter.title}</h1>
           <p
             style={{
@@ -95,13 +85,6 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
-        featuredImage {
-          childImageSharp{
-            sizes(maxWidth: 630) {
-                ...GatsbyImageSharpSizes
-            }
-          }
-        }
       }
     }
   }

@@ -1,6 +1,5 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Image from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -19,10 +18,6 @@ class BlogIndex extends React.Component {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <div key={node.fields.slug} style={{ marginBottom: rhythm(2) }}>
-              <Image
-                sizes={node.frontmatter.featuredImage.childImageSharp.sizes}
-                style={{ height: '150px' }}
-              />
               <h3
                 style={{
                   marginTop: rhythm(1 / 2),
@@ -74,13 +69,6 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
-            featuredImage {
-              childImageSharp{
-                sizes(maxWidth: 630) {
-                    ...GatsbyImageSharpSizes
-                }
-              }
-            }
           }
         }
       }
