@@ -1,0 +1,9 @@
+.gatsby-highlight {
+  background-color: #f5f7ff;
+  border: none;
+  border-radius: 16px;
+  box-shadow: rgba(0,0,0,0.51) 10px 10px 10px -16px;
+  padding: 0.5em 1em;
+  overflow: auto;
+  margin-bottom: 2em;
+}
