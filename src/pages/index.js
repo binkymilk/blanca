@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 
 import featured from "../../static/art/red-swan.png"
 import { yellow } from "../utils/theme"
+import { rhythm } from "../utils/typography"
 
 const FeaturedPost = () => {
   return (
@@ -57,7 +58,9 @@ class BlogIndex extends React.Component {
         <SEO title="Home" />
         <div className={className}>
           <div className="featured">
-            <FeaturedPost />
+            <Link to={`/art`}>
+              <FeaturedPost />
+            </Link>
           </div>
           <p>
             Hi, my name is Bianca. <br /> This is where I dump my stuff.
@@ -69,11 +72,23 @@ class BlogIndex extends React.Component {
 }
 
 export default styled(BlogIndex)`
+  max-width: ${rhythm(24)};
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   align-self: center;
+
+  .featured > a:hover {
+    background-color: transparent;
+  }
+
+  @media screen and (max-width: 600px) {
+    & {
+      max-width 100vw;
+      overflow: hidden;
+    }
+  }
 
   textpath {
     fill: ${yellow};

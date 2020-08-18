@@ -35,24 +35,21 @@ export default styled(Layout)`
     position: fixed;
     top: 0;
     width: 100%;
+    max-width: 100vw;
     z-index: -1;
   }
 
   .stripes > .grid {
-    display: grid;
+    display: flex;
     height: 100%;
     width: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: ;
-    gap: 1px 1px;
-    grid-template-areas: ". . . . . .";
+    justify-content: space-between;
   }
 
   .grid > .stripe-item {
     background: rgba(0, 0, 0, 0.07);
     height: 100%;
     width: 1px;
-    margin-right: 100px;
   }
 
   .grid > .stripe-item:first-child {
@@ -66,7 +63,6 @@ export default styled(Layout)`
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    max-width: ${rhythm(24)};
     min-height: calc(100vh - 51px);
     padding: ${rhythm(3 / 4)} ${rhythm(3 / 4)};
   }

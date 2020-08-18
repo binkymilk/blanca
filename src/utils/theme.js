@@ -81,7 +81,8 @@ const theme = {
       textDecoration: "none",
     },
     "a:hover,a:active": {
-      // color: "black",
+      backgroundColor: yellow,
+      transition: "all 0.3s ease-in-out",
     },
     "mark,ins": {
       background: "#007acc",
