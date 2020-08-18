@@ -6,15 +6,16 @@ import "@browniebroke/gatsby-image-gallery/dist/style.css"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
+import captions from "../../static/captions"
 import { rhythm } from "../utils/typography"
 
 const ArtIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const images = data.allFile.edges.map(({ node }) => node.childImageSharp)
-  const captions = ["hi1", "hi2", "hi3", "hi4", "hi5", "hi6", "hi7", "hi8"]
   const images_new = images.map((image, index) => ({
     ...image,
-    caption: captions[index],
+    caption: captions[captions.length - 1 - index] || "",
   }))
   console.log(images_new)
 
@@ -44,7 +45,7 @@ export const query = graphql`
     }
     allFile(
       filter: { relativeDirectory: { eq: "gallery" } }
-      sort: { fields: name }
+      sort: { fields: ctime, order: DESC }
     ) {
       edges {
         node {
