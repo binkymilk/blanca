@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 
 import Header from "./header"
-import Footer from "./footer"
 
 import { rhythm } from "../utils/typography"
 
@@ -23,17 +22,7 @@ class Layout extends React.Component {
             <div className="stripe-item" />
           </div>
         </div>
-        <div
-          style={{
-            marginLeft: `auto`,
-            marginRight: `auto`,
-            maxWidth: rhythm(24),
-            padding: `${rhythm(3 / 4)} ${rhythm(3 / 4)}`,
-          }}
-        >
-          <main>{children}</main>
-        </div>
-        {/* <Footer /> */}
+        <main className="content">{children}</main>
       </div>
     )
   }
@@ -68,5 +57,16 @@ export default styled(Layout)`
 
   .grid > .stripe-item:first-child {
     width: 0;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: ${rhythm(24)};
+    min-height: calc(100vh - 51px);
+    padding: ${rhythm(3 / 4)} ${rhythm(3 / 4)};
   }
 `

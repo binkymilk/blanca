@@ -16,7 +16,7 @@ const theme = {
     },
     {
       name: "PT Serif",
-      styles: ["400i", "700"],
+      styles: ["400", "700"],
     },
   ],
   headerFontFamily: ["Poppins", "sans-serif"],

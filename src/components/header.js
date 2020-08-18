@@ -13,9 +13,9 @@ const Header = ({ className, title }) => (
     </h3>
     <img className="logo" alt="blanca" src={logo} />
     <div className="menu">
-      <h3>
-        <Link to={`/blog`}>blog</Link>
-      </h3>
+      <h4>
+        <Link to={`/blog`}>BLOG</Link>
+      </h4>
     </div>
   </header>
 )
@@ -48,7 +48,8 @@ export default styled(Header)`
     margin-left: auto;
   }
 
-  .menu > h3 {
+  .menu > h3,
+  .menu > h4 {
     font-weight: bold;
     letter-spacing: 0.12em;
     margin: 0;
