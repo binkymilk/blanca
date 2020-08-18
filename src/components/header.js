@@ -1,56 +1,55 @@
 import React from "react"
 import { Link } from "gatsby"
+import styled from "styled-components"
 
-import { rhythm } from "../utils/typography"
+import logo from "../../static/logo.png"
+import { yellow, orange } from "../utils/theme"
 
-const Header = ({ title }) => (
-  <div
-    style={{
-      display: `flex`,
-      flexDirection: `row`,
-      padding: `${rhythm(1)}`,
-      height: `100px`
-    }}
-  >
-    <h3
-      style={{
-        margin: 0,
-        backgroundColor: `#dcf4dd`,
-        borderRadius: rhythm(1),
-        padding: `${rhythm(1 / 3)} ${rhythm(2 / 3)}`
-      }}
-    >
-      <Link
-        to={`/`}
-        style={{
-          boxShadow: `none`,
-          borderBottom: `none`,
-          textDecoration: `none`,
-        }}
-      >
-        {title}
-      </Link>
+const Header = ({ className, title }) => (
+  <header className={className}>
+    <h3 className="title">
+      <Link to={`/`}>{title}</Link>
     </h3>
-    <div style={{ display: `flex`, marginLeft: `auto` }}>
-      <h3
-        style={{
-          fontWeight: `bold`,
-          margin: 0,
-          padding: `${rhythm(1 / 3)} ${rhythm(2 / 3)}`
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-          }}
-          to={`/blog`}
-        >
-          blog
-        </Link>
+    <img className="logo" alt="blanca" src={logo} />
+    <div className="menu">
+      <h3>
+        <Link to={`/blog`}>blog</Link>
       </h3>
     </div>
-  </div>
+  </header>
 )
 
-export default Header
+export default styled(Header)`
+  display: flex;
+  align-items: center;
+  background-color: ${yellow};
+  flex-direction: row;
+  padding-left: 24px;
+  padding-right: 24px;
+  height: 51px;
+
+  .title {
+    color: ${orange};
+    margin: 0;
+    letter-spacing: 0.12em;
+  }
+
+  .logo {
+    height: 95px;
+    width: auto;
+    position: absolute;
+    left: calc(50% - 56px);
+    top: 16px;
+  }
+
+  .menu {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .menu > h3 {
+    font-weight: bold;
+    letter-spacing: 0.12em;
+    margin: 0;
+  }
+`

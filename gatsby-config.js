@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `BLANCA`,
+    title: `BLANC_`,
     author: `Bianca Silmaro`,
-    description: `I like building stuff and dumping them in the world wide web.`,
+    description: `Hi, my name is Bianca. This is where I dump my stuff.`,
     siteUrl: `https://blanca.netlify.com`,
     social: {
       twitter: `binkymilk`,
-      github: `binkymilk`
+      github: `binkymilk`,
     },
-    image: `image.png`
+    image: `image.png`,
   },
   plugins: [
     `gatsby-transformer-sharp`,
@@ -47,21 +47,21 @@ module.exports = {
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
           {
-            resolve: 'gatsby-remark-emojis',
+            resolve: "gatsby-remark-emojis",
             options: {
-              active : true,
-              class  : 'emoji-icon',
-              size   : 64,
-              styles : {
-                display      : 'inline',
-                margin       : '0',
-                'margin-top' : '1px',
-                position     : 'relative',
-                top          : '5px',
-                width        : '25px'
-              }
-            }
-          }
+              active: true,
+              class: "emoji-icon",
+              size: 64,
+              styles: {
+                display: "inline",
+                margin: "0",
+                "margin-top": "1px",
+                position: "relative",
+                top: "5px",
+                width: "25px",
+              },
+            },
+          },
         ],
       },
     },
