@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -18,7 +19,13 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <div style={{ paddingTop: rhythm(1.5), maxWidth: rhythm(24) }}>
+        <div
+          style={{
+            paddingTop: rhythm(1.5),
+            maxWidth: rhythm(24),
+            width: "100%",
+          }}
+        >
           <h1 style={{ color: orange }}>{post.frontmatter.title}</h1>
           <p
             style={{
@@ -31,7 +38,10 @@ class BlogPostTemplate extends React.Component {
           >
             {post.frontmatter.date}
           </p>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          <div
+            dangerouslySetInnerHTML={{ __html: post.html }}
+            className={this.props.className}
+          />
           <hr
             style={{
               marginBottom: rhythm(1),
@@ -68,7 +78,11 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-export default BlogPostTemplate
+export default styled(BlogPostTemplate)`
+  div {
+    overflow: auto;
+  }
+`
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {

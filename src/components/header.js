@@ -6,22 +6,37 @@ import logo from "../../static/logo.png"
 import { rhythm } from "../utils/typography"
 import { yellow, orange } from "../utils/theme"
 
-const Header = ({ className, title }) => (
-  <header className={className}>
-    <h4 className="title">
-      <Link to={`/`}>{title}</Link>
-    </h4>
-    <img className="logo" alt="blanca" src={logo} />
-    <div className="menu">
-      <h4>
-        <Link to={`/art`}>ART</Link>
+const Header = ({ className, title }) => {
+  const path = window.location.pathname
+  return (
+    <header className={className}>
+      <h4 className="title">
+        <Link to={`/`}>{title}</Link>
       </h4>
-      <h4>
-        <Link to={`/blog`}>BLOG</Link>
-      </h4>
-    </div>
-  </header>
-)
+      <Link to={`/`}>
+        <img className="logo" alt="blanca" src={logo} />
+      </Link>
+      <div className="menu">
+        <h4>
+          <Link
+            to={`/art`}
+            className={`${path.includes("/art") ? "selected" : ""}`}
+          >
+            ART
+          </Link>
+        </h4>
+        <h4>
+          <Link
+            to={`/blog`}
+            className={`${path.includes("/blog") ? "selected" : ""}`}
+          >
+            BLOG
+          </Link>
+        </h4>
+      </div>
+    </header>
+  )
+}
 
 export default styled(Header)`
   display: flex;
@@ -32,6 +47,21 @@ export default styled(Header)`
   padding-right: ${rhythm(1)};
   height: 51px;
   width: 100vw;
+
+  a.selected {
+    position: relative;
+  }
+
+  a.selected:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: ${orange};
+    transition: all 0.3s ease-in-out;
+    height: 3px;
+  }
 
   .title {
     color: ${orange};
