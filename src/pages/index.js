@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import featured from "../../static/art/red-swan.png"
-import { yellow } from "../utils/theme"
+import { yellow, orange } from "../utils/theme"
 import { rhythm } from "../utils/typography"
 
 const FeaturedPost = () => {
@@ -63,7 +63,8 @@ class BlogIndex extends React.Component {
             </Link>
           </div>
           <p>
-            Hi, my name is Bianca. <br /> This is where I dump my stuff.
+            Hi, my name is <em>Bianca</em>. <br /> This is where I dump my
+            stuff.
           </p>
         </div>
       </Layout>
@@ -100,6 +101,13 @@ export default styled(BlogIndex)`
   p {
     text-align: center;
     font-weight: 400;
+  }
+
+  em {
+    background-color: ${yellow};
+    font-style: normal;
+    font-weight: bold;
+    color: ${orange};
   }
 `
 
