@@ -14,36 +14,36 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="Blog" />
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug} style={{ marginBottom: rhythm(2) }}>
-              <h3
-                style={{
-                  marginTop: rhythm(1 / 2),
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link
-                  style={{ boxShadow: `none`, borderBottom: `none` }}
-                  to={`blog/${node.fields.slug}`}
+        <div style={{ paddingTop: rhythm(2) }}>
+          {posts.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug
+            return (
+              <div key={node.fields.slug} style={{ marginBottom: rhythm(2) }}>
+                <h3
+                  style={{
+                    marginTop: rhythm(1 / 2),
+                    marginBottom: rhythm(1 / 4),
+                  }}
                 >
-                  {title}
-                </Link>
-              </h3>
-              <small
-                style={{ color: `#7a7c7e` }}
-              >
-                {node.frontmatter.date}
-              </small>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </div>
-          )
-        })}
+                  <Link
+                    style={{ boxShadow: `none`, borderBottom: `none` }}
+                    to={`/blog${node.fields.slug}`}
+                  >
+                    {title}
+                  </Link>
+                </h3>
+                <small style={{ color: `#7a7c7e` }}>
+                  {node.frontmatter.date}
+                </small>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: node.frontmatter.description || node.excerpt,
+                  }}
+                />
+              </div>
+            )
+          })}
+        </div>
       </Layout>
     )
   }

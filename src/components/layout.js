@@ -63,6 +63,7 @@ export default styled(Layout)`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin-left: auto;
     margin-right: auto;
     max-width: ${rhythm(24)};
