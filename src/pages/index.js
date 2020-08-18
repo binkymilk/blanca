@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -7,57 +8,25 @@ import { rhythm, scale } from "../utils/typography"
 
 class BlogIndex extends React.Component {
   render() {
-    const { data } = this.props
+    const { data, className } = this.props
     const siteTitle = data.site.siteMetadata.title
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="Home" />
-        <div
-          style={{
-            height: `calc(100vh - 200px)`,
-            display: `flex`,
-            flexDirection: `column`,
-            alignItems: `center`,
-            justifyContent: `center`
-          }}
-        >
-          <p
-            style={{
-              ...scale(2.75),
-              fontWeight: `bold`,
-              lineHeight: `1.2`
-            }}
-          >
-            ;-)
-          </p>
-          <p
-            style={{
-              ...scale(0.50),
-              fontWeight: `bold`,
-              lineHeight: `1.5`,
-              textAlign: `center`
-            }}
-          >
-            hi, my name is {` `}
-            <span
-              style={{
-                backgroundColor: `#dcf4dd`,
-                borderRadius: rhythm(1),
-                padding: `${rhythm(1 / 4)} ${rhythm(1 / 2)}`
-              }}
-            >
-              bianca
-            </span><br />
-            this is where i dump my stuff
-          </p>
-        </div>
+        <div className={className} />
       </Layout>
     )
   }
 }
 
-export default BlogIndex
+export default styled(BlogIndex)`
+  height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
 
 export const pageQuery = graphql`
   query {

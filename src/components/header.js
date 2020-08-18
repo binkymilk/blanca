@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 
 import logo from "../../static/logo.png"
+import { rhythm } from "../utils/typography"
 import { yellow, orange } from "../utils/theme"
 
 const Header = ({ className, title }) => (
@@ -24,8 +25,8 @@ export default styled(Header)`
   align-items: center;
   background-color: ${yellow};
   flex-direction: row;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: ${rhythm(1)};
+  padding-right: ${rhythm(1)};
   height: 51px;
 
   .title {
