@@ -5,7 +5,7 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import featured from "../../static/art/red-swan.png"
+import featured from "../../static/art/featured.png"
 import { yellow, orange } from "../utils/theme"
 import { rhythm } from "../utils/typography"
 

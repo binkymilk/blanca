@@ -71,6 +71,7 @@ const captions = {
   "00042-10000-hours.png": "",
   "00043-respect-namgi.png": "",
   "00044-red-swan.png": "",
+  "00045-dynamite-tae.png": "",
 }
 
 export default captions
