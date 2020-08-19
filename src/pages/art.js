@@ -12,12 +12,11 @@ import { rhythm } from "../utils/typography"
 
 const ArtIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
-  const images = data.allFile.edges.map(({ node }) => node.childImageSharp)
-  const images_new = images.map((image, index) => ({
-    ...image,
-    caption: captions[captions.length - 1 - index] || "",
+  const images = data.allFile.edges.map(({ node }) => ({
+    ...node.childImageSharp,
+    caption: captions[node.base],
   }))
-  console.log(images_new)
+  console.log(images)
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -30,7 +29,7 @@ const ArtIndex = ({ data, location }) => {
           paddingTop: rhythm(2),
         }}
       >
-        <Gallery images={images_new} />
+        <Gallery images={images} />
       </div>
     </Layout>
   )
@@ -45,10 +44,11 @@ export const query = graphql`
     }
     allFile(
       filter: { relativeDirectory: { eq: "gallery" } }
-      sort: { fields: ctime, order: DESC }
+      sort: { fields: name, order: DESC }
     ) {
       edges {
         node {
+          base
           childImageSharp {
             thumb: fluid(maxWidth: 270, maxHeight: 270) {
               ...GatsbyImageSharpFluid

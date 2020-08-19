@@ -7,7 +7,6 @@ import { rhythm } from "../utils/typography"
 import { yellow, orange } from "../utils/theme"
 
 const Header = ({ className, title }) => {
-  const path = window.location.pathname
   return (
     <header className={className}>
       <h4 className="title">
@@ -18,18 +17,12 @@ const Header = ({ className, title }) => {
       </Link>
       <div className="menu">
         <h4>
-          <Link
-            to={`/art`}
-            className={`${path.includes("/art") ? "selected" : ""}`}
-          >
+          <Link to={`/art`} activeClassName="selected">
             ART
           </Link>
         </h4>
         <h4>
-          <Link
-            to={`/blog`}
-            className={`${path.includes("/blog") ? "selected" : ""}`}
-          >
+          <Link to={`/blog`} activeClassName="selected">
             BLOG
           </Link>
         </h4>
