@@ -16,7 +16,6 @@ const ArtIndex = ({ data, location }) => {
     ...node.childImageSharp,
     caption: captions[node.base],
   }))
-  console.log(images)
 
   return (
     <Layout location={location} title={siteTitle}>
