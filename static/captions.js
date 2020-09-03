@@ -72,6 +72,7 @@ const captions = {
   "00043-respect-namgi.png": "",
   "00044-red-swan.png": "",
   "00045-dynamite-tae.png": "",
+  "00046-flower-tae.png": "Photos by Europeana and Jade Stephens on Unsplash.",
 }
 
 export default captions
